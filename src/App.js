@@ -6,6 +6,7 @@ import { getAPI, getHeaders } from './apolloClient/config';
 import buildApolloClient from './apolloClient/buildApolloClient';
 
 import { OrderList, OrderEdit, OrderShow } from './components/Orders';
+import { EventList } from './components/Events';
 
 const restClient = buildApolloClient(
   new ApolloClient({
@@ -18,6 +19,10 @@ export default class App extends Component {
   render() {
     return (
       <Admin title="Admin Apollo" restClient={restClient}>
+        <Resource
+          name="event"
+          list={EventList}
+        />
         <Resource
           name="order"
           show={OrderShow}
