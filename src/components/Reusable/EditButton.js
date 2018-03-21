@@ -10,7 +10,6 @@ const EditButton = ({ basePath = '', record = {} }) => (
         containerElement={<Link to={`${basePath}/${record.orderId}`} />}
         style={{ overflow: 'inherit' }}
     >
-      {console.warn('link to ',`${basePath}/${record.orderId}` )}
         <ContentCreate color={cyan500} />
     </IconButton>
 );

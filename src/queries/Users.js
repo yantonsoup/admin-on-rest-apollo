@@ -4,6 +4,8 @@ const allUsers = ({ pagination: { page, perPage }}) =>   ({
   query: gql`
     query ($limit: Int, $offset: Int){
       allUsers (limit:$limit, offset:$offset)  {
+        id
+        userId
         version
         email
         firstName
