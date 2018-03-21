@@ -5,9 +5,9 @@ import IconButton from 'material-ui/IconButton';
 import {cyan500} from 'material-ui/styles/colors';
 import ContentCreate from 'material-ui/svg-icons/content/create';
 
-const EditButton = ({ basePath = '', record = {} }) => (
+const EditButton = ({ basePath = '', record = {}, resource}) => (
     <IconButton
-        containerElement={<Link to={`${basePath}/${record.orderId}`} />}
+        containerElement={<Link to={`${basePath}/${record[`${resource}Id`]}`} />}
         style={{ overflow: 'inherit' }}
     >
         <ContentCreate color={cyan500} />

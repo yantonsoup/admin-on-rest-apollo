@@ -7,7 +7,7 @@ import buildApolloClient from './apolloClient/buildApolloClient';
 
 import { OrderList, OrderEdit, OrderShow } from './components/Orders';
 import { EventList } from './components/Events';
-import { UserList } from './components/Users';
+import { UserList, UserEdit } from './components/Users';
 
 const restClient = buildApolloClient(
   new ApolloClient({
@@ -27,6 +27,7 @@ export default class App extends Component {
         <Resource
           name="user"
           list={UserList}
+          edit={UserEdit}
         />
         <Resource
           name="order"

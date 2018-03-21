@@ -5,6 +5,7 @@ import { EditButton } from '../Reusable'
 const UserList = (props) => (
     <List {...props} perPage={20}>
       <Datagrid>
+        {console.warn('user list props', props)}
         <TextField source="userId" />
         <TextField source="email" />
         <TextField source="fullName" />
