@@ -51,17 +51,19 @@ const oneOrder = ({ id }) => ({
   variables: { id },
 });
 
-const updateOrder = ({data}) => {
-  const {id} = data
+const updateOrder = (props) => {
+  console.warn('updateOrder mutation props', props)
+  const {data} = props
   return {
     mutation: gql`
       mutation ($input: UpdateOrderInputType) {
         updateOrder (input:$input) {
           id
+          isCancelled
         }
       }
     `,
-    variables: { input: {id} },
+    variables: { input: { id: data.id, isCancelled: data.isCancelled }},
   }
 };
 

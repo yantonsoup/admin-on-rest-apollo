@@ -20,9 +20,8 @@ export default (apolloClient) => {
       case 'DELETE':
         data = await apolloClient
           .mutate(buildQuery(type, resource, params))
-          .then(response => {
-            return response.data[mapResourceTypeToResolver(type, resource)]
-          });
+          .then(response => response.data[mapResourceTypeToResolver(type, resource)])
+
         return { data };
       default:
         throw new Error('Unsupported fetch type');
