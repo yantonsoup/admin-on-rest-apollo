@@ -19,6 +19,12 @@ const OrderEdit = props => (
     <SimpleForm>
       <TextField style={detailStyle} source="orderId" />
       <BooleanInput source="isCancelled"/>
+      <BooleanInput source="orderCompleted"/>
+      <TextField style={detailStyle} source="shippingAddress.zip" />
+      <TextField style={detailStyle} source="shippingAddress.city" />
+      <TextField style={detailStyle} source="shippingAddress.state" />
+      <TextField style={detailStyle} source="shippingAddress.street1" />
+      <TextField style={detailStyle} source="shippingAddress.street2" />
     </SimpleForm>
   </Edit>
 );
