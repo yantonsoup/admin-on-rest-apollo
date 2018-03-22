@@ -5,18 +5,21 @@ import {
     TabbedForm,
     TextInput,
     FormTab,
+    SelectInput,
+    SimpleForm,
+    BooleanInput,
+    TextField
 } from 'admin-on-rest';
 
 const OrderTitle = ({ title }) => title ? <FullNameField record={title} size={32} /> : null;
 
+const detailStyle = { display: 'inline-block', verticalAlign: 'top', marginRight: '2em', minWidth: '8em' };
 const OrderEdit = props => (
-  <Edit title={<OrderTitle title="title here"/>} {...props}>
-    <TabbedForm>
-      <FormTab>
-        <TextInput source="orderId" style={{ display: 'inline-block' }} />
-        <TextInput source="street2" style={{ display: 'inline-block', marginLeft: 32 }} />
-      </FormTab>
-    </TabbedForm>
+  <Edit {...props}>
+    <SimpleForm>
+      <TextField style={detailStyle} source="orderId" />
+      <BooleanInput source="isCancelled"/>
+    </SimpleForm>
   </Edit>
 );
 

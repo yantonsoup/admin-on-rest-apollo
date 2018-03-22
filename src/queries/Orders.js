@@ -45,25 +45,28 @@ const oneOrder = ({ id }) => ({
           state
           zip
         }
-        orderItems{
-          orderItemId
-          productSetId
-          productInfo {
-            name
-            price
-            productImage
-            slug
-            categorySlug
-            style
-          }
-        }
       }
     }
   `,
   variables: { id },
 });
 
+const updateOrder = ({data}) => {
+  const {id} = data
+  return {
+    mutation: gql`
+      mutation ($input: UpdateOrderInputType) {
+        updateOrder (input:$input) {
+          id
+        }
+      }
+    `,
+    variables: { input: {id} },
+  }
+};
+
 export default {
   allOrders,
   oneOrder,
+  updateOrder,
 }

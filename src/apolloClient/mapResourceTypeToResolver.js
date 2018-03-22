@@ -10,6 +10,7 @@ export default (type, resource) => {
     case 'GET_MANY_REFERENCE':
         return `all${pluralize(normalizedResourceName)}`;
     case 'GET_ONE': return `one${normalizedResourceName}`;
+    case 'UPDATE': return `update${normalizedResourceName}`;
     case 'CREATE': return `create${normalizedResourceName}`;
     case 'DELETE': return `delete${normalizedResourceName}`;
     default: break;
